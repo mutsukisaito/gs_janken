@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>じゃんけん</title>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet" />
+  <link rel="stylesheet" href="css/reset_mini.css">
+  <link rel="stylesheet" href="css/janken.css">
+</head>
+
+<body>
+  <header>
+    <h1>じゃんけん</h1>
+  </header>
+  <main>
+    <section id="pcSection">
+      <img id="pcFace" src="img/pc-smile.png" data-default="img/pc-smile.png" alt="ジャンケンロボット" width="100">
+      <p><img src="img/fukidashi02.png" data-default="img/fukidashi02.png" id="pcHand" width="100"></p>
+    </section>
+
+    <section id="finImg">
+      <!-- ゲームオーバー・ゲームクリア -->
+    </section>
+
+    <section id="userSection">
+      <div class="wrap">
+        <p><img id="userFace" src="img/user-smile.png" data-default="img/user-smile.png" alt="あなたの表情" width="100"></p>
+        <!-- <p id="result" data-default="勝敗は？？">勝敗は？？</p> -->
+      </div>
+      <div class="wrap">
+        <ul id="myLives" class="heart">
+          <li><img src="img/heart_blur.png"></li>
+          <li><img src="img/heart_blur.png"></li>
+          <li><img src="img/heart_blur.png"></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="userHand">
+      <button><img src="img/janken_gu.png" alt="グー"></button>
+      <button><img src="img/janken_choki.png" alt="チョキ"></button>
+      <button><img src="img/janken_pa.png" alt="パー"></button>
+    </section>
+
+    <section>
+      <button id="resetBtn">リセット</button>
+    </section>
+
+  </main>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/janken.js"></script>
+</body>
+
+</html>

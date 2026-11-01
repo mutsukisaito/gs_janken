@@ -1,0 +1,47 @@
+/* ==========================================================================
+   最新モダンリセット（詳細度をゼロにして上書きしやすく設定）
+   ========================================================================== */
+@layer reset {
+  :where(*) {
+    /* 1. ボックスサイズを境界線・内側余白込みで計算（レイアウト崩れ防止の必須設定） */
+    box-sizing: border-box;
+    /* 2. 余白を一旦ゼロにして、自分でコントロールしやすくする */
+    margin: 0;
+    padding: 0;
+  }
+
+  :where(html) {
+    /* 3. ページ内リンクでスクロールした際、滑らかに動かす */
+    scroll-behavior: smooth;
+    /* 4. アニメーション（height: autoへの変化など）を滑らかにする最新プロパティ */
+    interpolate-size: allow-keywords;
+  }
+
+  :where(body) {
+    /* 5. スマホでの文字サイズ自動調整による表示崩れを防止 */
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    /* 6. テキストの見た目を滑らかにする */
+    -webkit-font-smoothing: antialiased;
+    /* 7. 最低限の画面高さを確保 */
+    min-height: 100vh;
+  }
+
+  :where(img, svg, picture, video) {
+    /* 8. 画像が親要素からはみ出すのを防ぎ、レスポンシブ対応にする */
+    max-width: 100%;
+    display: block;
+    height: auto;
+  }
+
+  :where(ul, ol) {
+    /* 9. リストの箇条書きドットを消す（学校の特徴やナビで邪魔になるため） */
+    list-style: none;
+  }
+
+  :where(a) {
+    /* 10. リンクの下線をデフォルト状態では消す */
+    text-decoration: none;
+    color: inherit;
+  }
+}

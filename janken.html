@@ -12,44 +12,51 @@
 
 <body>
   <header>
-    <h1>じゃんけん</h1>
+    <p>╲じゃんけん やろーよ╱</p>
   </header>
   <main>
-    <!-- コンピューター側 -->
-    <section id="pcSection">
-      <div class="flexWrap">
-        <!-- コンピューターの手 -->
-        <div class="pcEmotion">
-          <p><img src="img/fukidashi02.png" data-default="img/fukidashi02.png" id="pcHand" width="80"></p>
+    <div class="wrap">
+      <!-- コンピューター側 -->
+      <section id="pcSection">
+        <div class="flexWrap">
+          <!-- コンピューターの手 -->
+          <div class="pcEmotion">
+            <p><img src="img/fukidashi02.png" data-default="img/fukidashi02.png" id="pcHand" width="80"></p>
+          </div>
+          <div class="hpBox pcLife">
+            <!-- コンピューターの残機 -->
+            <ul id="pcLives" class="heart">
+              <li><img src="img/heart_blur.png"></li>
+              <li><img src="img/heart_blur.png"></li>
+              <li><img src="img/heart_blur.png"></li>
+            </ul>
+          </div>
+          <div class="wrap">
+            <img id="pcFace" src="img/pc-smile.png" data-default="img/pc-smile.png" alt="ジャンケンロボット">
+          </div>
         </div>
-        <div class="hpBox pcLife">
-          <!-- コンピューターの残機 -->
-          <ul id="pcLives" class="heart">
+        <div id="finImg">
+          <!-- ゲームオーバー・ゲームクリア -->
+        </div>
+      </section>
+
+      <!-- ユーザー側 -->
+      <section id="userSection">
+        <div class="wrap">
+          <p><img id="userFace" src="img/user-smile.png" data-default="img/user-smile.png" alt="あなたの表情" width="100"></p>
+          <!-- <p id="result" data-default="勝敗は？？">勝敗は？？</p> -->
+        </div>
+        <div class="wrap hpBox">
+          <ul id="myLives" class="heart">
             <li><img src="img/heart_blur.png"></li>
             <li><img src="img/heart_blur.png"></li>
             <li><img src="img/heart_blur.png"></li>
           </ul>
         </div>
-        <div class="wrap">
-          <img id="pcFace" src="img/pc-smile.png" data-default="img/pc-smile.png" alt="ジャンケンロボット">
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
-    <!-- ユーザー側 -->
-    <section id="userSection">
-      <div class="wrap">
-        <p><img id="userFace" src="img/user-smile.png" data-default="img/user-smile.png" alt="あなたの表情" width="100"></p>
-        <!-- <p id="result" data-default="勝敗は？？">勝敗は？？</p> -->
-      </div>
-      <div class="wrap hpBox">
-        <ul id="myLives" class="heart">
-          <li><img src="img/heart_blur.png"></li>
-          <li><img src="img/heart_blur.png"></li>
-          <li><img src="img/heart_blur.png"></li>
-        </ul>
-      </div>
-    </section>
+
 
     <footer>
       <section id="userHand">
@@ -63,9 +70,6 @@
       </section>
     </footer>
 
-    <section id="finImg">
-      <!-- ゲームオーバー・ゲームクリア -->
-    </section>
   </main>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="js/janken.js"></script>

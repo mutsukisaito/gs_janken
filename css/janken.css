@@ -1,7 +1,7 @@
 /* 1. ベース＆モダン変数設定 */
 :root {
   /* テーマカラー */
-  --primary-color: #cf429e;
+  --primary-color: #2278c0;
   /* アクセント */
   --accent-color: #380c4e;
   /* 文字色など */
@@ -63,6 +63,7 @@ button {
   background: var(--color-white);
   border: 0;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 main {
@@ -82,9 +83,9 @@ section {
 
 header {
   text-align: center;
-
-  & h1 {
+  & p {
     font-size: var(--font-size-m);
+    color: var(--primary-color);
   }
 }
 
@@ -125,12 +126,14 @@ footer {
 
   & .pcLife {
     position: absolute;
-    bottom: 40px;
+    bottom: 30px;
     /* 中央揃え */
     left: 50%;
     /* 親要素の左から50%の位置に移動 */
     transform: translateX(-50%);
-    /* 吹き出し自身の幅の半分だけ左に戻す */
+    & img {
+      max-width: none;
+    }
   }
 }
 
@@ -169,8 +172,14 @@ footer {
 #finImg {
   position: fixed;
   inset: 0;
-  margin: auto;
-  z-index: 9999;
+  top: 60px;
+  z-index: 333;
   display: none;
   cursor: pointer;
+  /* エリア全体のクリック判定を無効化 */
+  pointer-events: none;
+  /* 画像自体のクリック判定だけを有効に戻す */
+  & img {
+    pointer-events: auto;
+  }
 }

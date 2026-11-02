@@ -7,7 +7,7 @@ $("#userHand button").on("click", function () {
 
     // ユーザーが押した手を取得
     const myHand = $(this).find('img').attr('alt');
-    console.log("ユーザーが押した手" + myHand);
+    console.log("myHand" + myHand);
 
     // コンピューターの手 randamで出す
     let num = Math.floor(Math.random() * 3);
@@ -51,7 +51,7 @@ $("#userHand button").on("click", function () {
         // 残機が0になったかチェック
         if ($("#pcLives li").length === 0) {
             // 残機が0のときゲームクリア表示
-            $("#finImg").html('<img src="img/text_gameclear_j.png" alt="ゲームクリア">');
+            $("#finImg").html('<img src="img/text_gameclear_j.png" alt="ゲームクリア">').show();
             console.log("ゲームクリア");
             // #userHand 内のすべての button を非活性にする
             $("#userHand button").prop("disabled", true);
@@ -78,6 +78,11 @@ $("#userHand button").on("click", function () {
     $('#userFace').attr(userFaceData);
     $("#pcHand").attr(pcHandImg);
     console.log("#result" + judge);
+});
+
+// 勝敗結果画像クリックでリセット実行
+$('#finImg').on('click', 'img', function () {
+    $('#resetBtn').trigger('click');
 });
 
 // リセットボタンでジャンケン結果を初期化

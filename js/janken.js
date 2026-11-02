@@ -17,13 +17,13 @@ $("#userHand button").on("click", function () {
     let pcHandImg = {};
     if (num === 0) {
         pcHand = "グー";
-        pcHandImg = { src: '../img/janken_gu.png', alt: 'PCの手_グー' };
+        pcHandImg = { src: './img/janken_gu.png', alt: 'PCの手_グー' };
     } else if (num === 1) {
         pcHand = "チョキ";
-        pcHandImg = { src: '../img/janken_choki.png', alt: 'PCの手_チョキ' };
+        pcHandImg = { src: './img/janken_choki.png', alt: 'PCの手_チョキ' };
     } else {
         pcHand = "パー";
-        pcHandImg = { src: '../img/janken_pa.png', alt: 'PCの手_パー' };
+        pcHandImg = { src: './img/janken_pa.png', alt: 'PCの手_パー' };
     }
     console.log("pcHand" + pcHand);
 
@@ -36,16 +36,16 @@ $("#userHand button").on("click", function () {
 
     if (myHand === pcHand) {
         judge = "あいこ";
-        pcFaceData = { src: '../img/pc-draw.png', alt: 'PCの表情_引き分け' };
-        userFaceData = { src: '../img/user-draw.png', alt: '人の表情_引き分け' };
+        pcFaceData = { src: './img/pc-draw.png', alt: 'PCの表情_引き分け' };
+        userFaceData = { src: './img/user-draw.png', alt: '人の表情_引き分け' };
     } else if (
         (myHand === "グー" && pcHand === "チョキ") ||
         (myHand === "チョキ" && pcHand === "パー") ||
         (myHand === "パー" && pcHand === "グー")
     ) {
         judge = "勝ち";
-        pcFaceData = { src: '../img/pc-lose.png', alt: 'PCの表情_負け' };
-        userFaceData = { src: '../img/user-win.png', alt: '人の表情_勝ち' };
+        pcFaceData = { src: './img/pc-lose.png', alt: 'PCの表情_負け' };
+        userFaceData = { src: './img/user-win.png', alt: '人の表情_勝ち' };
         // コンピューターの残機を減らす
         $("#pcLives li:last-child").remove();
         // 残機が0になったかチェック
@@ -59,8 +59,8 @@ $("#userHand button").on("click", function () {
 
     } else {
         judge = "負け";
-        pcFaceData = { src: '../img/pc-win.png', alt: 'PCの表情_勝ち' };
-        userFaceData = { src: '../img/user-lose.png', alt: '人の表情_負け' };
+        pcFaceData = { src: './img/pc-win.png', alt: 'PCの表情_勝ち' };
+        userFaceData = { src: './img/user-lose.png', alt: '人の表情_負け' };
         // ユーザーの残機を減らす
         $("#myLives li:last-child").remove();
         // 残機が0になったかチェック

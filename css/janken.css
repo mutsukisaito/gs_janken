@@ -68,12 +68,28 @@ button {
 main {
   max-width: 480px;
   margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
 }
 
 section {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+header {
+  text-align: center;
+
+  & h1 {
+    font-size: var(--font-size-m);
+  }
+}
+
+footer {
+  margin-top: auto;
 }
 
 .heart {
@@ -89,6 +105,7 @@ section {
   background: var(--color-white);
   padding: 6px 12px;
   border-radius: 12px;
+  width: fit-content;
 }
 
 #pcSection {
@@ -98,11 +115,27 @@ section {
 .flexWrap {
   position: relative;
   display: inline-block;
+
   & .pcEmotion {
     position: absolute;
-    top: -50px;
-    right: -50px;
+    top: -10px;
+    right: -80px;
+    width: 150px;
   }
+
+  & .pcLife {
+    position: absolute;
+    bottom: 40px;
+    /* 中央揃え */
+    left: 50%;
+    /* 親要素の左から50%の位置に移動 */
+    transform: translateX(-50%);
+    /* 吹き出し自身の幅の半分だけ左に戻す */
+  }
+}
+
+#pcFace {
+  max-width: 180px;
 }
 
 #userSection {
@@ -113,7 +146,7 @@ section {
 }
 
 #userFace {
-  max-width: 200px;
+  max-width: 150px;
 }
 
 #userHand {
@@ -131,4 +164,13 @@ section {
   & button:hover img {
     transform: scale(1.5);
   }
+}
+
+#finImg {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  z-index: 9999;
+  display: none;
+  cursor: pointer;
 }

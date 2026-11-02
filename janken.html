@@ -18,16 +18,24 @@
     <!-- コンピューター側 -->
     <section id="pcSection">
       <div class="flexWrap">
+        <!-- コンピューターの手 -->
         <div class="pcEmotion">
           <p><img src="img/fukidashi02.png" data-default="img/fukidashi02.png" id="pcHand" width="80"></p>
         </div>
-        <div class="wrap"><img id="pcFace" src="img/pc-smile.png" data-default="img/pc-smile.png" alt="ジャンケンロボット" width="100"></div>
+        <div class="hpBox pcLife">
+          <!-- コンピューターの残機 -->
+          <ul id="pcLives" class="heart">
+            <li><img src="img/heart_blur.png"></li>
+            <li><img src="img/heart_blur.png"></li>
+            <li><img src="img/heart_blur.png"></li>
+          </ul>
+        </div>
+        <div class="wrap">
+          <img id="pcFace" src="img/pc-smile.png" data-default="img/pc-smile.png" alt="ジャンケンロボット">
+        </div>
       </div>
     </section>
 
-    <section id="finImg">
-      <!-- ゲームオーバー・ゲームクリア -->
-    </section>
     <!-- ユーザー側 -->
     <section id="userSection">
       <div class="wrap">
@@ -43,16 +51,21 @@
       </div>
     </section>
 
-    <section id="userHand">
-      <button><img src="img/janken_gu.png" alt="グー"></button>
-      <button><img src="img/janken_choki.png" alt="チョキ"></button>
-      <button><img src="img/janken_pa.png" alt="パー"></button>
-    </section>
+    <footer>
+      <section id="userHand">
+        <button><img src="img/janken_gu.png" alt="グー"></button>
+        <button><img src="img/janken_choki.png" alt="チョキ"></button>
+        <button><img src="img/janken_pa.png" alt="パー"></button>
+      </section>
 
-    <section>
-      <button id="resetBtn">リセット</button>
-    </section>
+      <section>
+        <button id="resetBtn">リセット</button>
+      </section>
+    </footer>
 
+    <section id="finImg">
+      <!-- ゲームオーバー・ゲームクリア -->
+    </section>
   </main>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="js/janken.js"></script>

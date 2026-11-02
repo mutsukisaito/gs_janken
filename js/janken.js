@@ -46,16 +46,27 @@ $("#userHand button").on("click", function () {
         judge = "勝ち";
         pcFaceData = { src: '../img/pc-lose.png', alt: 'PCの表情_負け' };
         userFaceData = { src: '../img/user-win.png', alt: '人の表情_勝ち' };
+        // コンピューターの残機を減らす
+        $("#pcLives li:last-child").remove();
+        // 残機が0になったかチェック
+        if ($("#pcLives li").length === 0) {
+            // 残機が0のときゲームクリア表示
+            $("#finImg").html('<img src="img/text_gameclear_j.png" alt="ゲームクリア">');
+            console.log("ゲームクリア");
+            // #userHand 内のすべての button を非活性にする
+            $("#userHand button").prop("disabled", true);
+        }
+
     } else {
         judge = "負け";
         pcFaceData = { src: '../img/pc-win.png', alt: 'PCの表情_勝ち' };
         userFaceData = { src: '../img/user-lose.png', alt: '人の表情_負け' };
-        // 残機を減らす
+        // ユーザーの残機を減らす
         $("#myLives li:last-child").remove();
         // 残機が0になったかチェック
         if ($("#myLives li").length === 0) {
             // 残機が0のときゲームオーバー表示
-            $("#finImg").html('<img src="img/text_gameover_j.png" alt="ゲームオーバー">');
+            $("#finImg").html('<img src="img/text_gameover_j.png" alt="ゲームオーバー">').show();
             console.log("ゲームオーバー");
             // #userHand 内のすべての button を非活性にする
             $("#userHand button").prop("disabled", true);
@@ -66,7 +77,7 @@ $("#userHand button").on("click", function () {
     $('#pcFace').attr(pcFaceData);
     $('#userFace').attr(userFaceData);
     $("#pcHand").attr(pcHandImg);
-    console.log("#result"+ judge);
+    console.log("#result" + judge);
 });
 
 // リセットボタンでジャンケン結果を初期化
@@ -84,14 +95,16 @@ $('#resetBtn').on('click', function () {
     // 残機を3に戻す
     // 中身を空にする
     $("#myLives").empty();
+    $("#pcLives").empty();
 
     // 指定した数だけ変数化したHTMLを追加
     for (let i = 0; i < maxLives; i++) {
         $("#myLives").append(heartHtml);
+        $("#pcLives").append(heartHtml);
     }
 
     // じゃんけんボタンを再び押せる状態に戻す
     $("#userHand button").prop("disabled", false);
     // ゲームオーバー画像を消去
-    $("#finImg").empty();
+    $("#finImg").empty().hide();
 });

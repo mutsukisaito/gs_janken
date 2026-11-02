@@ -1,57 +1,58 @@
 /* 1. ベース＆モダン変数設定 */
 :root {
-    /* テーマカラー */
-    --primary-color: #cf429e;
-    /* アクセント */
-    --accent-color: #380c4e;
-    /* 文字色など */
-    --text-color: #333333;
-    --text-color-6: #666;
-    --text-color-9: #999;
-    --bg-light: #f8f4e6;
-    --color-white: #fff;
-    --text-link: #132379;
-    --color-error: #5e0000;
+  /* テーマカラー */
+  --primary-color: #cf429e;
+  /* アクセント */
+  --accent-color: #380c4e;
+  /* 文字色など */
+  --text-color: #333333;
+  --text-color-6: #666;
+  --text-color-9: #999;
+  --bg-light: #f8f4e6;
+  --color-white: #fff;
+  --text-link: #132379;
+  --color-error: #5e0000;
 
-    /* 画面幅（vw）に合わせて文字サイズが自動変化 （最小値・推奨値・最大値を指定） */
-    --font-size-h1: clamp(1.8rem, 4vw, 3rem);
-    --font-size-h2: clamp(1.5rem, 3vw, 2rem);
-    --font-size-h3: clamp(1.2rem, 2vw, 1rem);
+  /* 画面幅（vw）に合わせて文字サイズが自動変化 （最小値・推奨値・最大値を指定） */
+  --font-size-h1: clamp(1.8rem, 4vw, 3rem);
+  --font-size-h2: clamp(1.5rem, 3vw, 2rem);
+  --font-size-h3: clamp(1.2rem, 2vw, 1rem);
 
-    /* 文字サイズ */
-    --font-size-xs: 0.75rem;
-    /* 12px相当 */
-    --font-size-s: 0.87rem;
-    /* 14px相当 */
-    --font-size-m: 1rem;
-    /* 16px相当（本文基準） */
-    --font-size-l: 1.25rem;
-    /* 20px相当 */
-    --font-size-xl: 1.5rem;
-    /* 24px相当 */
+  /* 文字サイズ */
+  --font-size-xs: 0.75rem;
+  /* 12px相当 */
+  --font-size-s: 0.87rem;
+  /* 14px相当 */
+  --font-size-m: 1rem;
+  /* 16px相当（本文基準） */
+  --font-size-l: 1.25rem;
+  /* 20px相当 */
+  --font-size-xl: 1.5rem;
+  /* 24px相当 */
 
-    /* 余白 */
-    --space-xs: 0.5rem;
-    --space-s: 1rem;
-    --space-m: 1.5rem;
-    --space-l: 2rem;
-    --space-xl: 3rem;
+  /* 余白 */
+  --space-xs: 0.5rem;
+  --space-s: 1rem;
+  --space-m: 1.5rem;
+  --space-l: 2rem;
+  --space-xl: 3rem;
 }
 
 img {
-    width: 100%;
+  width: 100%;
 }
 
 body {
-    margin: 0;
-    font-family: Poppins, 'Noto Sans JP', sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    background: var(--bg-light);
-    color: var(--text-color);
-    line-height: 1.7;
-    font-size: var(--font-size-m);
+  margin: 0;
+  font-family: Poppins, 'Noto Sans JP', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  background: var(--bg-light);
+  color: var(--text-color);
+  line-height: 1.7;
+  font-size: var(--font-size-m);
 }
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -78,14 +79,37 @@ section {
 .heart {
   display: flex;
   gap: 10px;
+
   & li img {
     width: 30px;
   }
 }
+
+.hpBox {
+  background: var(--color-white);
+  padding: 6px 12px;
+  border-radius: 12px;
+}
+
+#pcSection {
+  margin-bottom: 16px;
+}
+
+.flexWrap {
+  position: relative;
+  display: inline-block;
+  & .pcEmotion {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+  }
+}
+
 #userSection {
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
+  margin-bottom: 16px;
 }
 
 #userFace {
@@ -98,11 +122,13 @@ section {
   gap: 10px;
   overflow: hidden;
   margin-bottom: 16px;
+
   & button {
     flex: 1;
     width: calc(100% / 3 - 1rem);
   }
-  & button:hover img{
+
+  & button:hover img {
     transform: scale(1.5);
   }
 }

@@ -6,20 +6,24 @@ const maxLives = 3;
 $("#userHand button").on("click", function () {
 
     // ユーザーが押した手を取得
-    const myHand = $(this).attr('alt');
+    const myHand = $(this).find('img').attr('alt');
     console.log("ユーザーが押した手" + myHand);
 
     // コンピューターの手 randamで出す
     let num = Math.floor(Math.random() * 3);
 
     // 0=グー,1=チョキ,2=パー
-    let pcHand = {};
+    let pcHand = "";
+    let pcHandImg = {};
     if (num === 0) {
-        pcHand = { src: '../img/janken_gu.png', alt: 'PCの手_グー' };
+        pcHand = "グー";
+        pcHandImg = { src: '../img/janken_gu.png', alt: 'PCの手_グー' };
     } else if (num === 1) {
-        pcHand = { src: '../img/janken_choki.png', alt: 'PCの手_チョキ' };
+        pcHand = "チョキ";
+        pcHandImg = { src: '../img/janken_choki.png', alt: 'PCの手_チョキ' };
     } else {
-        pcHand = { src: '../img/janken_pa.png', alt: 'PCの手_パー' };
+        pcHand = "パー";
+        pcHandImg = { src: '../img/janken_pa.png', alt: 'PCの手_パー' };
     }
     console.log("pcHand" + pcHand);
 
@@ -61,8 +65,8 @@ $("#userHand button").on("click", function () {
     // 結果をHTML側に返す
     $('#pcFace').attr(pcFaceData);
     $('#userFace').attr(userFaceData);
-    $("#pcHand").attr(pcHand);
-    // $("#result").text(judge);
+    $("#pcHand").attr(pcHandImg);
+    console.log("#result"+ judge);
 });
 
 // リセットボタンでジャンケン結果を初期化

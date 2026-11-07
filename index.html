@@ -21,18 +21,14 @@
         <div class="flexWrap">
           <!-- コンピューターの手 -->
           <div class="pcEmotion">
-            <p><img src="img/fukidashi02.png" data-default="img/fukidashi02.png" id="pcHand" width="80"></p>
+            <p><img id="pcHand" width="80"></p>
           </div>
           <div class="hpBox pcLife">
             <!-- コンピューターの残機 -->
-            <ul id="pcLives" class="heart">
-              <li><img src="img/heart_blur.png"></li>
-              <li><img src="img/heart_blur.png"></li>
-              <li><img src="img/heart_blur.png"></li>
-            </ul>
+            <ul id="pcLives" class="heart"></ul>
           </div>
           <div class="wrap">
-            <img id="pcFace" src="img/pc-smile.png" data-default="img/pc-smile.png" alt="ジャンケンロボット">
+            <img id="pcFace">
           </div>
         </div>
         <div id="finImg">
@@ -43,15 +39,10 @@
       <!-- ユーザー側 -->
       <section id="userSection">
         <div class="wrap">
-          <p><img id="userFace" src="img/user-smile.png" data-default="img/user-smile.png" alt="あなたの表情" width="100"></p>
-          <!-- <p id="result" data-default="勝敗は？？">勝敗は？？</p> -->
+          <p><img id="userFace" width="100"></p>
         </div>
         <div class="wrap hpBox">
-          <ul id="myLives" class="heart">
-            <li><img src="img/heart_blur.png"></li>
-            <li><img src="img/heart_blur.png"></li>
-            <li><img src="img/heart_blur.png"></li>
-          </ul>
+          <ul id="myLives" class="heart"></ul>
         </div>
       </section>
     </div>
@@ -60,9 +51,9 @@
 
     <footer>
       <section id="userHand">
-        <button><img src="img/janken_gu.png" alt="グー"></button>
-        <button><img src="img/janken_choki.png" alt="チョキ"></button>
-        <button><img src="img/janken_pa.png" alt="パー"></button>
+        <button data-hand="gu"><img src="img/janken_gu.png" alt="グー"></button>
+        <button data-hand="choki"><img src="img/janken_choki.png" alt="チョキ"></button>
+        <button data-hand="pa"><img src="img/janken_pa.png" alt="パー"></button>
       </section>
 
       <section>

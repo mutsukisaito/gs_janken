@@ -53,11 +53,6 @@ body {
   font-size: var(--font-size-m);
 }
 
-* {
-  margin: 0;
-  box-sizing: border-box;
-}
-
 button {
   padding: 8px;
   background: var(--color-white);
@@ -142,7 +137,6 @@ footer {
 }
 
 #userSection {
-  display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 16px;
@@ -153,7 +147,6 @@ footer {
 }
 
 #userHand {
-  display: flex;
   align-items: stretch;
   gap: 10px;
   overflow: hidden;
@@ -161,7 +154,6 @@ footer {
 
   & button {
     flex: 1;
-    width: calc(100% / 3 - 1rem);
   }
 
   & button:hover img {
